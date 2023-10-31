@@ -1,0 +1,517 @@
+/* Estilos generales */
+
+/* Overlay o Fondo Transparente */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Color gris transparente */
+    z-index: 1001; /* Asegurarse de que esté detrás del formulario pero por encima del contenido de la página */
+}
+
+
+
+* { box-sizing: border-box; }
+body { 
+  margin: 0; 
+  padding: 0; 
+  background: #333;
+  font-family: Raleway;  
+  font-size: 15px; 
+}
+h1 { margin: 0; }
+#contact { 
+  margin: 4em auto;
+  width: 100px; 
+  height: 30px; 
+  line-height: 30px;
+  background: black;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+#contact:hover { background: #666; }
+#contact:active { background: #444; }
+
+#contactForm { 
+  display: none;
+  border: 6px solid black; 
+  padding: 2em;
+  width: 400px;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  top:55%; /* Aumentar el porcentaje para mover el formulario hacia abajo */
+  left:50%;
+  transform: translate(-50%,-50%);
+  z-index: 1002;
+  -webkit-transform: translate(-50%,-50%);
+}
+
+/* Botón de cerrar */
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ccc;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input, textarea { 
+  margin: .8em auto;
+  font-family: inherit; 
+  text-transform: inherit; 
+  font-size: inherit;
+  display: block; 
+  width: 280px; 
+  padding: .4em;
+}
+
+textarea { height: 80px; resize: none; }
+
+.formBtn { 
+  width: 140px;
+  display: inline-block;
+  background: black;
+  color: #fff;
+  font-weight: 100;
+  font-size: 1.2em;
+  border: none;
+  height: 50px;
+}
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin-top: 60px;  /* Añade un margen superior para evitar que el contenido se superponga con la appbar */
+    font-family: 'Roboto', sans-serif; 
+    background-color: white;
+}
+
+.container {
+    max-width: 100%; /* Cambiado a 100% */
+    margin: 0 auto;
+}
+
+/* AppBar */
+.appbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;     /* Esto hará que la barra se quede fija */
+    top: 0;              /* Posicionada en la parte superior */
+    left: 0;             /* Asegurarse de que esté completamente a la izquierda */
+    right: 0;            /* Asegurarse de que se extienda por toda la ventana */
+    z-index: 1000;       /* Esto asegura que la barra esté por encima de otros contenidos */
+    background-color: white;  /* Añade un fondo para que el contenido detrás no se muestre a través */
+}
+.appbar a {
+    margin: 0 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.logo {
+    height: 100px;
+    display: block;
+    margin: auto;
+}
+
+.social-icons a {
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.social-icons img {
+    width: auto;
+    height: 32px;
+}
+/* Footer */
+footer {
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Cartas */
+.cartas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carta {
+    display: flex;
+    width: 100px /* Cambiado a 100% */
+    height 500;
+    background-color: white;
+    border-radius: 45px;
+    margin: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.imagen {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Especialidades */
+.especialidades ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.especialidades li {
+    margin-bottom: 10px;
+}
+
+/* Mapa */
+.mapa-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mapa-container iframe {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .logo {
+        height: 50px;
+    }
+    
+    .social-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-form input, .contact-form textarea {
+        font-size: 14px;
+    }
+    
+    footer p {
+        font-size: 12px;
+        margin: 5px 0;
+    }
+
+    .carta {
+        width: 90%;
+        height: auto;
+    }
+
+    .mapa-container iframe {
+        width: 90%;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .carta {
+        width: 100%;
+    }
+
+    .imagen {
+        padding: 10px;
+    }
+}
+
+
+
+
+.container, .carta, footer {
+    background-color: #fff; /* Fondo blanco para resaltar contenidos */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+footer {
+    background-color: black; /* Fondo blanco para resaltar contenidos */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+
+
+
+/* Estilos generales */
+.container {
+    max-width: 1700px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slide {
+    width: 100%;
+    position: absolute;
+    transition: opacity 1s ease;
+    opacity: 0;
+}
+
+.slide.active {
+    opacity: 1;
+    transition: opacity 1s ease;
+    z-index: 1;
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+button.prev, button.next {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+button.prev:hover, button.next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 700px; /* Ajustar según necesidad */
+}
+
+.contenedor {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 30px;
+    margin: 10px 50px 15px 50px;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.seccion {
+    width: calc(50% - 10px);
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.seccion p {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.seccion img {
+    height: 100px;
+    width: 100px;
+}
+
+/* Media queries para responsividad */
+@media only screen and (max-width: 768px) {
+    .slide-text {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    button.prev, button.next {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+
+    .controls {
+        top: 45%;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .info, .image {
+        width: 100%;
+    }
+
+    .seccion {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .slide-text {
+        font-size: 12px; /* Tamaño de fuente más pequeño para texto del slide */
+        padding: 5px; /* Padding reducido */
+    }
+
+    button.prev, button.next {
+        font-size: 16px; /* Tamaño de fuente más pequeño para botones */
+        padding: 5px 10px; /* Padding reducido */
+    }
+
+    .controls {
+        top: 45%; /* Ajuste para los controles en pantallas más pequeñas */
+    }
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+
+}
+
+.info {
+    width: 50%;
+    padding: 20px;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+
+
+
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .info, .image {
+        width: 100%;
+    }
+}
+
+.contenedor {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 20px 30px; /* Padding en la parte superior e inferior, y en los extremos */
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.seccion {
+    width: calc(50% - 10px); /* Asume un espacio de 10px entre secciones */
+    
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.seccion p {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.seccion img {
+    
+    height: 100px;
+    width: 100px;
+}
+
+.contenedor {
+    margin-top: 10px;
+    margin-right: 50px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+/* Media query para pantallas menores a 768px (tablets) */
+@media (max-width: 768px) {
+    .seccion {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .seccion p, 
+    .seccion img {
+        margin-right: 0;
+        max-width: 100%;
+    }
+}
+
+/* Media query para pantallas menores a 480px (móviles) */
+@media (max-width: 480px) {
+    .contenedor {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
+
+/* Estilo general para la clase .seccion */
+.seccion {
+    position: relative; 
+    padding-left: 50px; /* Espacio para la imagen */
+}
+
+/* Estilo específico para cada título dentro de .seccion */
+.seccion h2 {
+    background-image: url('icon1.png'); /* Cambia 'path_a_la_imagen.jpg' por el path correcto de tu imagen */
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 35px 35px; /* Puedes ajustar el tamaño según lo necesites */
+    padding-left: 40px; /* Espacio para que el texto no quede encima de la imagen */
+}
