@@ -1,7 +1,6 @@
 <?php
-
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $recipient = "proyectos@fantazylabz.tech"; // Change this to your desired email address
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $recipient = "proyectos@fantazylabz.tech"; // Cambia esto a tu dirección de correo electrónico deseada
     $subject = $_POST["asunto"];
     $senderEmail = $_POST["correo"];
     $message = $_POST["mensaje"];
@@ -18,17 +17,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </head>
     <body>
         <p><b>Email:</b> $senderEmail</p>
-        <p><b>Message:</b></p>
+        <p><b>Mensaje:</b></p>
         <p>$message</p>
     </body>
     </html>
     ";
 
-    if(mail($recipient, $subject, $body, $headers)) {
-        echo "Email sent successfully!";
+    if (mail($recipient, $subject, $body, $headers)) {
+        echo "¡Email enviado exitosamente!";
     } else {
-        echo "Failed to send the email.";
+        echo "No se pudo enviar el correo electrónico.";
     }
 }
-
 ?>
