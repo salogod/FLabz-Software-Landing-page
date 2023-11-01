@@ -14,58 +14,98 @@
 
 
 
-* { box-sizing: border-box; }
-body { 
-  margin: 0; 
-  padding: 0; 
-  background: #333;
-  font-family: Raleway;  
-  font-size: 15px; 
-}
-h1 { margin: 0; }
-#contact { 
-  margin: 4em auto;
-  width: 100px; 
-  height: 30px; 
-  line-height: 30px;
-  background: black;
-  color: white;
-  font-weight: 700;
-  text-align: center;
-  cursor: pointer;
-  border: 1px solid white;
-}
 
-#contact:hover { background: #666; }
+h1 { margin: 0; }
+#contact {
+    margin: 4em auto;
+    width: 200px;
+    height: 50px; /* Aumentamos la altura */
+    line-height: 50px; /* Ajustamos la línea de altura */
+    background: black;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    border: none; /* Eliminamos el borde */
+    border-radius: 25px; /* Añadimos bordes redondos */
+    font-size: 16px; /* Aumentamos el tamaño de fuente */
+    transition: background 0.3s ease, transform 0.3s ease; /* Efectos de transición */
+  }
+  
+  #contact:hover {
+    background: #333; /* Cambiamos el color de fondo al pasar el ratón */
+    transform: scale(1.1); /* Aumentamos ligeramente el tamaño al pasar el ratón */
+  }
+  
 #contact:active { background: #444; }
 
-#contactForm { 
-  display: none;
-  border: 6px solid black; 
-  padding: 2em;
-  width: 400px;
-  text-align: center;
-  background: #fff;
-  position: fixed;
-  top:55%; /* Aumentar el porcentaje para mover el formulario hacia abajo */
-  left:50%;
-  transform: translate(-50%,-50%);
-  z-index: 1002;
-  -webkit-transform: translate(-50%,-50%);
-}
+#contactForm {
+    display: none;
+    border: 2px black; /* Cambiamos el color del borde a azul */
+    padding: 2em;
+    width: 400px;
+    text-align: center;
+    background: #fff;
+    position: fixed;
+    top: 50%; /* Centramos verticalmente el formulario */
+    left: 50%; /* Centramos horizontalmente el formulario */
+    transform: translate(-50%, -50%);
+    z-index: 1002;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Agregamos una sombra suave */
+  }
+  
+  /* Estilo para el título "Contacta a un experto" */
+  #contactForm h1 {
+    font-size: 24px;
+    color: black; /* Cambiamos el color del título a azul */
+    margin-bottom: 1em;
+  }
+  
+  /* Estilo para el texto "Nos pondremos en contacto con usted lo antes posible" */
+  #contactForm small {
+    font-size: 14px;
+    color: black; /* Cambiamos el color del texto a gris */
+    margin-bottom: 2em;
+  }
+  
+  /* Estilo para los campos de entrada */
+  #contactForm input[type="text"],
+  #contactForm input[type="email"],
+  #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1em;
+    border: 1px solid #ddd; /* Cambiamos el color del borde a gris claro */
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+
+  
+  
 
 /* Botón de cerrar */
 .closeBtn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #ccc;
-  width: 25px;
-  height: 25px;
-  text-align: center;
-  border-radius: 50%;
-  cursor: pointer;
-}
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ccc;
+    width: 30px; /* Aumentamos el ancho */
+    height: 30px; /* Aumentamos la altura */
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px; /* Aumentamos el tamaño de fuente */
+    line-height: 30px; /* Centramos verticalmente el icono */
+    color: #555; /* Cambiamos el color del icono */
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .closeBtn:hover {
+    background: red; /* Cambiamos el color de fondo al pasar el ratón */
+    color: #fff; /* Cambiamos el color del icono al pasar el ratón */
+  }
+  
 
 input, textarea { 
   margin: .8em auto;
@@ -80,15 +120,25 @@ input, textarea {
 textarea { height: 80px; resize: none; }
 
 .formBtn { 
-  width: 140px;
-  display: inline-block;
-  background: black;
-  color: #fff;
-  font-weight: 100;
-  font-size: 1.2em;
-  border: none;
-  height: 50px;
-}
+    width: 140px;
+    display: inline-block;
+    background: black; /* Cambiamos el color de fondo a azul */
+    color: #fff;
+    font-weight: 600; /* Aumentamos el peso de la fuente */
+    font-size: 1.2em;
+    border: none;
+    height: 50px;
+    border-radius: 25px; /* Agregamos bordes redondos */
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    
+  }
+  
+  .formBtn:hover {
+    background: black; /* Cambiamos el color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Aumentamos ligeramente el tamaño al pasar el ratón */
+  }
+  
 
 
 *, *::before, *::after {
@@ -148,40 +198,6 @@ footer {
     text-align: center;
 }
 
-/* Cartas */
-.cartas-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.carta {
-    display: flex;
-    width: 100px /* Cambiado a 100% */
-    height 500;
-    background-color: white;
-    border-radius: 45px;
-    margin: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-}
-
-.imagen {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-/* Especialidades */
-.especialidades ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.especialidades li {
-    margin-bottom: 10px;
-}
 
 /* Mapa */
 .mapa-container {
@@ -263,16 +279,16 @@ footer {
 /* Estilos generales */
 .container {
     max-width: 1700px;
-    padding-left: 40px;
-    padding-right: 40px;
-    margin: 0 auto;
+    padding-left: 0;
+    padding-right:0;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .slide {
-    width: 100%;
+    width: 1200px;
     position: absolute;
     transition: opacity 1s ease;
     opacity: 0;
@@ -282,6 +298,7 @@ footer {
     opacity: 1;
     transition: opacity 1s ease;
     z-index: 1;
+    width: 1200px;
 }
 
 .slide-text {
@@ -321,19 +338,10 @@ button.prev:hover, button.next:hover {
 .slider {
     width: 100%;
     overflow: hidden;
-    margin-bottom: 700px; /* Ajustar según necesidad */
+    margin-bottom: 650px; /* Ajustar según necesidad */
 }
 
-.contenedor {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px 30px;
-    margin: 10px 50px 15px 50px;
-    text-align: justify;
-    line-height: 1.7;
-}
+
 
 h1 {
     width: 100%;
@@ -347,15 +355,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-.seccion p {
-    flex: 1;
-    margin-right: 10px;
-}
-
-.seccion img {
-    height: 100px;
-    width: 100px;
-}
 
 /* Media queries para responsividad */
 @media only screen and (max-width: 768px) {
@@ -404,13 +403,7 @@ h1 {
 }
 
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
 
-}
 
 .info {
     width: 50%;
@@ -419,13 +412,6 @@ h1 {
     line-height: 1.7;
 }
 
-
-
-
-.image img {
-    max-width: 100%;
-    height: auto;
-}
 
 @media (max-width: 768px) {
     .container {
@@ -461,7 +447,7 @@ h1 {
 
 .seccion p {
     flex: 1;
-    margin-right: 10px;
+    
 }
 
 .seccion img {
@@ -472,9 +458,9 @@ h1 {
 
 .contenedor {
     margin-top: 10px;
-    margin-right: 50px;
+    margin-right: 0px;
     margin-bottom: 15px;
-    margin-left: 50px;
+   
     text-align: justify;
     line-height: 1.7;
 }
@@ -503,8 +489,8 @@ h1 {
 
 /* Estilo general para la clase .seccion */
 .seccion {
-    position: relative; 
-    padding-left: 50px; /* Espacio para la imagen */
+   
+    padding-left: 0px; /* Espacio para la imagen */
 }
 
 /* Estilo específico para cada título dentro de .seccion */

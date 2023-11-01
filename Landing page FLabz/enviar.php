@@ -1,23 +1,32 @@
 <?php
-$name = $_POST['name'];
-$mail = $_POST['mail'];
-$phone = $_POST['phone'];
-$message = $_POST['message'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $recipient = "proyectos@fantazylabz.tech"; // Cambia esto a tu dirección de correo electrónico deseada
+    $subject = $_POST["asunto"];
+    $senderEmail = $_POST["correo"];
+    $message = $_POST["mensaje"];
+    
+    $headers = "From: $senderEmail\r\n";
+    $headers .= "Reply-To: $senderEmail\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-$header = 'From: ' . $mail . " \r\n";
-$header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
-$header .= "Mime-Version: 1.0 \r\n";
-$header .= "Content-Type: text/plain";
+    $body = "
+    <html>
+    <head>
+        <title>$subject</title>
+    </head>
+    <body>
+        <p><b>Email:</b> $senderEmail</p>
+        <p><b>Mensaje:</b></p>
+        <p>$message</p>
+    </body>
+    </html>
+    ";
 
-$message = "Este mensaje fue enviado por: " . $name . " \r\n";
-$message .= "Su e-mail es: " . $mail . " \r\n";
-$message .= "Mensaje: " . $_POST['message'] . " \r\n";
-$message .= "Enviado el: " . date('d/m/Y', time());
-
-$para = 'david.salomon.nava11@gmail.com';
-$asunto = 'Mensaje de... (Escribe como quieres que se vea el remitente de tu correo)';
-
-mail($para, $asunto, utf8_decode($message), $header);
-
-header("Location:index.html");
+    if (mail($recipient, $subject, $body, $headers)) {
+        echo "¡Email enviado exitosamente!";
+    } else {
+        echo "No se pudo enviar el correo electrónico.";
+    }
+}
 ?>
