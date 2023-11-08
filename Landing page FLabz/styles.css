@@ -149,6 +149,7 @@ body {
     margin-top: 60px;  /* Añade un margen superior para evitar que el contenido se superponga con la appbar */
     font-family: 'Roboto', sans-serif; 
     background-color: white;
+    overflow-x: hidden;
 }
 
 .container {
@@ -501,3 +502,35 @@ h1 {
     background-size: 35px 35px; /* Puedes ajustar el tamaño según lo necesites */
     padding-left: 40px; /* Espacio para que el texto no quede encima de la imagen */
 }
+
+.wrapper{
+    max-height: 200px;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap; /* Asegúrate de que todas las imágenes están en una línea */
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-10 * 100%)); /* 10 es el número de imágenes menos 1, ajustar según corresponda */
+    }
+}
+
+.descripcion {
+    display: flex;
+    align-items: center; /* Centra el texto verticalmente al lado del icono */
+    gap: 10px; /* Pequeño margen entre el icono y el texto */
+  }
+
+  .descripcion img {
+    width: 50px; /* Ancho del icono */
+    height: 50px; /* Alto del icono */
+  }
+  
+  .descripcion h2 {
+    margin: 0; /* Remueve los márgenes por defecto del h2 si es necesario */
+  }
